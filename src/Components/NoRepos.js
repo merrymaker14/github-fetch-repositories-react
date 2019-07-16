@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const NoRepos = props => (
-  <li className='no-repos'>
-    <h3>Sorry, no Repos match your search.</h3>
-  </li>
-);
+export default () => {
+  useEffect(() => {
+    console.log("React Hooks")
+  }, []);
 
-export default NoRepos;
+  return (
+    <li className='no-repos'>
+      <h3>Sorry, no Repos match your search.</h3>
+    </li>
+  );
+}

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
-import SearchForm from './Components/SearchForm';
 import RepoList from './Components/RepoList';
+
+const SearchForm = React.lazy(() => import('./Components/SearchForm'));
 
 type AppState = {
   repos: any,
@@ -41,12 +42,12 @@ export default class App extends Component<{}, AppState> {
         <div className="main-header">
           <div className="inner">
             <h1 className="main-title">Search in repositories GitHub</h1>
-            <SearchForm onSearch={this.performSearch} />      
+            <React.Suspense fallback={<div>SearchForm loading...</div>}><SearchForm onSearch={this.performSearch} /></React.Suspense>     
           </div>   
         </div>    
         <div className="main-content">
           {
-            (this.state.loading)
+            this.state.loading
              ? <p>Loading...</p>
              : <div><h2>{this.state.query}</h2><RepoList data={this.state.repos} /></div>
           }          

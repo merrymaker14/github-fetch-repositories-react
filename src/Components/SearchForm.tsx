@@ -1,4 +1,9 @@
 import React, { PureComponent } from 'react';
+import styled from "styled-components";
+
+const SearchFormCss = styled.form`
+  border: 1px solid red;
+`;
 
 type SearchFormProps = {
   onSearch: (query: string) => void
@@ -25,13 +30,13 @@ class SearchForm extends PureComponent<SearchFormProps, SearchFormState> {
   
   render() {  
     return (
-      <form className="search-form" onSubmit={this.handleSubmit} >
+      <SearchFormCss onSubmit={this.handleSubmit} >
         <label className="is-hidden" htmlFor="search">Search</label>
         <input type="search" 
                onChange={this.onSearchChange}
                name="search" 
                placeholder="Search..." />
-      </form>      
+      </SearchFormCss>      
     );
   }
 }

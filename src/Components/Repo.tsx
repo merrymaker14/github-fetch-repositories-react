@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 type RepoProps = {
   url: string,
   name: string,
-  description: string
+  description?: string
 }
 
 const Repo = ({ url, name, description }: RepoProps) => (
@@ -17,7 +17,7 @@ const Repo = ({ url, name, description }: RepoProps) => (
 Repo.propTypes = {
   url: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string
 }
 
 export default Repo;
