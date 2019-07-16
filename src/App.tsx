@@ -4,13 +4,18 @@ import axios from 'axios';
 import SearchForm from './Components/SearchForm';
 import RepoList from './Components/RepoList';
 
-export default class App extends Component {
-  
+type AppState = {
+  repos: any,
+  loading: boolean,
+  query: string
+}
+
+export default class App extends Component<{}, AppState> {
   state = {
     repos: [],
     loading: true,
-    query: {}
-  };
+    query: ''
+  }
 
   componentDidMount() {
     this.performSearch();
