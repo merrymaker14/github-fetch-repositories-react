@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { ThunkDispatch } from "redux-thunk";
 import RepoList from './RepoList';
 import { loadRepos } from '../actions/reposActions';
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 
 const SearchForm = React.lazy(() => import('./SearchForm'));
 
@@ -34,7 +33,6 @@ class App extends Component<AppProps, AppState> {
   }
   
   performSearch(query = 'react') {
-    console.log(this.props);
     this.setState({
       query: query,
       repos: this.props.loadRepos(query),
@@ -67,7 +65,7 @@ const mapStateToProps = (state: { repos: any; }) => ({
   repos: state.repos
 });
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
   return bindActionCreators({
     loadRepos
   }, dispatch)

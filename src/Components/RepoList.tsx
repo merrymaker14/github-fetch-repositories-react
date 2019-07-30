@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const RepoList = ({data}: any) => { 
   let repos;
-  if (data.length) {
+  if (Array.isArray(data)) {
     repos = data.map((repo: { name: any; html_url: any; description: any; id: string | number | undefined; }) => <Repo name={repo.name} url={repo.html_url} description={repo.description} key={repo.id} />);    
   } else {
     repos = <NoRepos />

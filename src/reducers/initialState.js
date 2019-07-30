@@ -1,3 +1,4 @@
 export default {
-	repos: []
+	repos: [],
+	query: 'react'
 };
