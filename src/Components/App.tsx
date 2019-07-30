@@ -17,7 +17,7 @@ type AppState = {
   query: string
 }
 
-class App extends Component<AppProps, AppState> {
+export class App extends Component<AppProps, AppState> {
   constructor(props: Readonly<AppProps>) {
 		super(props);
 		this.state = {

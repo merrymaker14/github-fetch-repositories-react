@@ -12,8 +12,7 @@ import initialState from './reducers/initialState';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(rootReducer, initialState, compose(applyMiddleware(sagaMiddleware))
-);
+const store = createStore(rootReducer, initialState, compose(applyMiddleware(sagaMiddleware)));
 
 sagaMiddleware.run(watchLoadRepos);
 

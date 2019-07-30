@@ -2,14 +2,14 @@ import axios from 'axios';
 import * as types from './actionTypes';
 import {takeEvery, put, call, select} from 'redux-saga/effects';
 
-export function loadReposSuccess(repos) {
+export function loadReposSuccess(repos: any) {
 	return {
 		type: types.LOAD_REPOS_SUCCESS,
 		repos
 	};
 }
 
-export function loadRepos(query) {
+export function loadRepos(query: string) {
 	return {
 		type: types.LOAD_REPOS,
 		query
