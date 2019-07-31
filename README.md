@@ -1,1 +1,1 @@
-Проект на React, Redux, Redux Saga, Jest, Enzume, Meterial UI.
+Проект на React, TypeScript, Redux, Redux Saga, Jest, Enzume, Meterial UI.
